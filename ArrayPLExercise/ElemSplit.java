@@ -22,7 +22,6 @@ public class ElemSplit {
                 nextHighest = value;
             }
         }
-        System.out.println(nextHighest);
         additive = highest - nextHighest;
         // Finding the position of the index for highest
         int highestIndex = 0;
@@ -31,7 +30,6 @@ public class ElemSplit {
                 highestIndex = i;
             }
         }
-        System.out.println(highestIndex);
         for (int i=0; i < highestIndex +2; i++){
             if (i != highestIndex){
                 num2[i] = num1[i];
@@ -42,11 +40,9 @@ public class ElemSplit {
                 break;
             }
         }
-        System.out.println(Arrays.toString(num2));
         for (int i = highestIndex+2; i<num2.length; i++){
             num2[i] = num1[i-1];
         }
-        System.out.println(additive);
         System.out.println(Arrays.toString(num2));
     }
 }
