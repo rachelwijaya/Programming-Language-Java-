@@ -74,6 +74,11 @@ public class BankingDriver {
         System.out.println(bank.getCustomer(5).getAccount().toString());
         System.out.println("-------------------------");
 
+        // Doesn't allow transfer to your own account and amount cannot be bigger than balance or less thane equal to zero
+        bank.getCustomer(5).getAccount().transfer(400, bank.getCustomer(5).getAccount());
+        bank.getCustomer(5).getAccount().transfer(1800, bank.getCustomer(3).getAccount());
+        bank.getCustomer(5).getAccount().transfer(-123, bank.getCustomer(3).getAccount());
+
 
     }
 }
