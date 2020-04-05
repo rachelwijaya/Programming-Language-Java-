@@ -53,7 +53,7 @@ public class Account {
         return "Account balance: " + this.getBalance();
     }
     public void transfer(int amt, Account account){
-        if (account != this && amt > 0){
+        if (account != this && amt > 0 && amt < this.balance){
             this.balance -= amt;
             account.balance += amt;
             this.recentTrans = amt;
@@ -65,6 +65,9 @@ public class Account {
             }
             if (amt <= 0){
                 System.out.println("Amount cannot be zero or less than zero.");
+            }
+            if (amt > this.balance){
+                System.out.println("Amount cannot be bigger than the amount in balance");
             }
         }
 
